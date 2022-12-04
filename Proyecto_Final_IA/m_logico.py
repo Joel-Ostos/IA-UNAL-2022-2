@@ -1,12 +1,13 @@
 import os, time
 from re import T
+from csv_lista import rows, cols  
 from itertools import combinations
 import numpy as np 
 import matplotlib.pyplot as plt 
 from IPython.display import clear_output
 
 class NonogramSolver:
-    def __init__(self, ROWS_VALUES=[[2], [4], [6], [4, 3], [5, 4], [2, 3, 2], [3, 5], [5], [3], [2], [2], [6]], COLS_VALUES=[[3], [5], [3, 2, 1], [5, 1, 1], [12], [3, 7], [4, 1, 1, 1], [3, 1, 1], [4], [2]], savepath=''):
+    def __init__(self, ROWS_VALUES=rows ,COLS_VALUES=rows, savepath=''):
         self.ROWS_VALUES = ROWS_VALUES
         self.no_of_rows = len(ROWS_VALUES)
         self.rows_changed = [0] * self.no_of_rows

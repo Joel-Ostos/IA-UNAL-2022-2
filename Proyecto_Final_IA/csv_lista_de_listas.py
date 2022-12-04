@@ -63,6 +63,3 @@ for i in range(len(rows)):
 
 for i in range(len(cols)):
     cols[i] = [int(a) for a in cols[i]]
-
-print(f"cols = {cols}")
-print(f"rows = {rows}")

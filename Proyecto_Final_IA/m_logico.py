@@ -51,7 +51,7 @@ class NonogramSolver:
                             if row_ind: self.cols_possibilities[ci] = self.remove_possibilities(self.cols_possibilities[ci], ri, val)
                             else: self.rows_possibilities[ri] = self.remove_possibilities(self.rows_possibilities[ri], ci, val)
                             clear_output(wait=True)
-                            self.display_board()
+                            #self.display_board()
                             if self.savepath != '':
                                 self.save_board()
                                 self.n += 1
@@ -96,11 +96,11 @@ class NonogramSolver:
     def remove_possibilities(self, possibilities, i, val):
         return [p for p in possibilities if p[i] == val]
 
-    def display_board(self):
+    '''def display_board(self):
         plt.imshow(self.board, cmap='Greys')
         plt.axis('off')
-        t = plt.show()
-        return t
+        t = plt.show()'''
+    
 
     def save_board(self, increase_size=20):
         name = f'0000000{str(self.n)}'[-8:]
@@ -124,7 +124,11 @@ class NonogramSolver:
     def check_solved(self):
         if 0 not in self.rows_done and 0 not in self.cols_done:
             self.solved = True
+            plt.imshow(self.board, cmap='Greys')
+            plt.axis('off')
+            t = plt.show()
+
     tiempo_final = time.time()
-    print(tiempo_final-tiempo_inicio)
+    print('El tiempo de ejecucion es: ',tiempo_final-tiempo_inicio)
 
 NonogramSolver()

@@ -68,8 +68,3 @@ for i in range(len(cols)):
 cols = [tuple(it) for it in cols]
 rows = [tuple(it) for it in rows]
 
-#cols = str(cols).replace(',)',')')
-#rows = str(rows).replace(',)',')')
-
-print(f"cols = {cols}")
-print(f"rows = {rows}")

@@ -1,1 +1,2 @@
 pywebview>=3.5
+python-constraint

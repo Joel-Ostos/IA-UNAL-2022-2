@@ -3,10 +3,12 @@ from re import T
 from csv_lista import rows, cols  
 from itertools import combinations
 import numpy as np 
+import time
 import matplotlib.pyplot as plt 
 from IPython.display import clear_output
 
 class NonogramSolver:
+    tiempo_inicio = time.time()
     def __init__(self, ROWS_VALUES=rows ,COLS_VALUES=rows, savepath=''):
         self.ROWS_VALUES = ROWS_VALUES
         self.no_of_rows = len(ROWS_VALUES)
@@ -121,5 +123,7 @@ class NonogramSolver:
     def check_solved(self):
         if 0 not in self.rows_done and 0 not in self.cols_done:
             self.solved = True
+    tiempo_final = time.time()
+    print(tiempo_final-tiempo_inicio)
 
 NonogramSolver()

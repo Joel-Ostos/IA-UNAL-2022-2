@@ -1,6 +1,7 @@
 import os
 import webview
-
+import time
+tiempo_inicio = time.time()
 def find_options(length, filled, pattern='', empty=''):
     """ This function finds all possibilities for the starting condition of the rows or columns. """
 
@@ -96,6 +97,7 @@ def update_existing(col_existing, row_existing):
     return row_existing, col_existing
 
 def solve(length, horizontal_grid, vertical_grid, max_passes=0):
+    
     """
         This function will solve a nonogram given the length, horizontal_grid, and vertical_grid.
 
@@ -199,7 +201,8 @@ def solve(length, horizontal_grid, vertical_grid, max_passes=0):
             # This allows for iterating through the solution one step at a time.
             # It was a feature request from a YouTube user.
             done = 1
-
+    
+    
     return horizontal_existing, horizontal_empty, passes
 
 def find_empty(length, potential):
@@ -221,7 +224,7 @@ def find_empty(length, potential):
 
 def main():
     """ This is the main function of the program. """
-
+    
     window = webview.create_window("Nonogram Solver", "web/main.html")
     window.expose(solve)
 
@@ -236,7 +239,12 @@ def main():
     else:
         # Unknown system.  Assume that it works properly with the default rendering engine.
         webview.start(http_server=True)
-
+    
+    
+tiempo_final = time.time()
+print(tiempo_final-tiempo_final)
 if __name__ == '__main__':
-
+    
+    
+    
     main()

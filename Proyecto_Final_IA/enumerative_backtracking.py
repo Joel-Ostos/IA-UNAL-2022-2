@@ -277,6 +277,7 @@ def backtrack(solution_array: Type[np.ndarray], row_placements: Dict[int, List[T
 
 if __name__ == "__main__":
     row_args = rows
+    print(len(rows))
     col_args = cols
     
     # Generate possibilities for each row and column

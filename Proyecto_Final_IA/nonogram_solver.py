@@ -1,5 +1,6 @@
 import os
 import webview
+#from menu import ventana_metodos_logicos
 import time
 tiempo_inicio = time.time()
 def find_options(length, filled, pattern='', empty=''):
@@ -244,6 +245,7 @@ def main():
 tiempo_final = time.time()
 print(tiempo_final-tiempo_final)
 if __name__ == '__main__':
+   # ventana_metodos_logicos.destroy()
     
     
     

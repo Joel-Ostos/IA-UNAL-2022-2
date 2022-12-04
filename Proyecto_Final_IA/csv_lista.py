@@ -1,6 +1,31 @@
 import os
-import menu
-from menu import archivo
+import tkinter
+from tkinter.filedialog import askopenfile
+
+def cargar_archivo():
+    buscar = tkinter.filedialog.askopenfilename(initialdir = '/home/jostos/Escritorio/IA-UNAL-2022-2/Proyecto_Final_IA/nonogramas')
+    fob = open(buscar, 'r')
+    global archivo
+    archivo = fob.read()
+    ventana.destroy()
+
+
+ventana = tkinter.Tk()
+fondo = tkinter.PhotoImage(file='Menu.png')
+label1 = tkinter.Label(ventana, image=fondo)
+label1.place(x=0,y=0)
+ventana.geometry('500x500+400+80')
+ventana.title('Nonogram Solver Menu')
+boton_continuar = tkinter.Button(text='Cargar Archivo',        
+        font='Bodoni',
+        cursor='hand2',
+        relief='flat',
+        bg = '#ffffff',
+        highlightbackground='white',
+        highlightthickness=2,
+        command = cargar_archivo)
+boton_continuar.place(x=200, y=250)
+ventana.mainloop()
 
 a = str(archivo)
 

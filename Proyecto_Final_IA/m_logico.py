@@ -7,9 +7,10 @@ import time
 import matplotlib.pyplot as plt 
 from IPython.display import clear_output
 
+
 class NonogramSolver:
     tiempo_inicio = time.time()
-    def __init__(self, ROWS_VALUES=rows ,COLS_VALUES=rows, savepath=''):
+    def __init__(self, ROWS_VALUES=rows ,COLS_VALUES=cols, savepath=''):
         self.ROWS_VALUES = ROWS_VALUES
         self.no_of_rows = len(ROWS_VALUES)
         self.rows_changed = [0] * self.no_of_rows

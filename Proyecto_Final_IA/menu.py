@@ -4,15 +4,30 @@ from tkinter import *
 from tkinter.filedialog import askopenfile
 
 def abrir_logico_1():
-    os.system('python3 /home/jostos/Escritorio/IA-UNAL-2022-2/Proyecto_Final_IA/m_logico.py')
+    os.system('python3 /home/jostos/Escritorio/IA-UNAL-2022-2/Proyecto_Final_IA/metodo_logico_1.py')
     ventana_metodos_logicos.destroy()
     
     
 
 def abrir_logico_2():
-    os.system('python3 /home/jostos/Escritorio/IA-UNAL-2022-2/Proyecto_Final_IA/nonogram_solver.py')
+    os.system('python3 /home/jostos/Escritorio/IA-UNAL-2022-2/Proyecto_Final_IA/metodo_logico_2.py')
     ventana_metodos_logicos.destroy()
 
+def abrir_backtracking_1():
+    os.system('python3 /home/jostos/Escritorio/IA-UNAL-2022-2/Proyecto_Final_IA/enumerative_backtracking.py')
+    ventana_metodos_backtracking.destroy()
+
+def abrir_backtracking_2():
+    os.system('python3 /home/jostos/Escritorio/IA-UNAL-2022-2/Proyecto_Final_IA/backtracking_naive.py')
+    ventana_metodos_backtracking.destroy()
+
+def abrir_csp_1():
+    os.system('python3 /home/jostos/Escritorio/IA-UNAL-2022-2/Proyecto_Final_IA/csp.py')
+    ventana_metodos_csp.destroy()
+
+def abrir_csp_2():
+    os.system('python3 /home/jostos/Escritorio/IA-UNAL-2022-2/Proyecto_Final_IA/annealing.py')
+    ventana_metodos_csp.destroy()
 
 def metodos_logico():
     ventana_inicio.destroy()
@@ -49,35 +64,67 @@ def metodos_logico():
 
 def metodos_backtracking():
     ventana_inicio.destroy()
-    global ventana_metodos_logicos
-    ventana_metodos_logicos = tkinter.Tk()
-    ventana_metodos_logicos.geometry('500x500+700+250')
-    ventana_metodos_logicos.title('Metodos Logicos')
+    global ventana_metodos_backtracking
+    ventana_metodos_backtracking = tkinter.Tk()
+    ventana_metodos_backtracking.geometry('500x500+700+250')
+    ventana_metodos_backtracking.title('Metodos Logicos')
     fondo_metodos_logico = tkinter.PhotoImage(file='Menu.png')
-    fondo_ub_metodos_logico = tkinter.Label(ventana_metodos_logicos,image=fondo_metodos_logico)
+    fondo_ub_metodos_logico = tkinter.Label(ventana_metodos_backtracking,image=fondo_metodos_logico)
     fondo_ub_metodos_logico.place(x=0,y=0)
 
-    boton_metodo_1 = tkinter.Button(ventana_metodos_logicos, text='Metodo 1',
+    boton_metodo_1 = tkinter.Button(ventana_metodos_backtracking, text='Metodo 1',
         font='Bodoni',
         cursor='hand2',
         relief='flat',
         bg = '#ffffff',
         highlightbackground='white',
         highlightthickness=2,
-        command = abrir_logico_1)
+        command = abrir_backtracking_2)
     boton_metodo_1.place(x=200, y=270)
 
-    boton_metodo_2 = tkinter.Button(ventana_metodos_logicos,text='Metodo 2',        
+    boton_metodo_2 = tkinter.Button(ventana_metodos_backtracking,text='Metodo 2',        
         font='Bodoni',
         cursor='hand2',
         relief='flat',
         bg = '#ffffff',
         highlightbackground='white',
         highlightthickness=2,
-        command = abrir_logico_2)
+        command = abrir_backtracking_1)
     boton_metodo_2.place(x=200, y=300)
 
-    ventana_metodos_logicos.mainloop()
+    ventana_metodos_backtracking.mainloop()
+
+def metodos_csp():
+    ventana_inicio.destroy()
+    global ventana_metodos_csp
+    ventana_metodos_csp = tkinter.Tk()
+    ventana_metodos_csp.geometry('500x500+700+250')
+    ventana_metodos_csp.title('Metodos Logicos')
+    fondo_metodos_logico = tkinter.PhotoImage(file='Menu.png')
+    fondo_ub_metodos_logico = tkinter.Label(ventana_metodos_csp,image=fondo_metodos_logico)
+    fondo_ub_metodos_logico.place(x=0,y=0)
+
+    boton_metodo_1 = tkinter.Button(ventana_metodos_csp, text='Metodo 1',
+        font='Bodoni',
+        cursor='hand2',
+        relief='flat',
+        bg = '#ffffff',
+        highlightbackground='white',
+        highlightthickness=2,
+        command = abrir_csp_1)
+    boton_metodo_1.place(x=200, y=270)
+
+    boton_metodo_2 = tkinter.Button(ventana_metodos_csp,text='Metodo 2',        
+        font='Bodoni',
+        cursor='hand2',
+        relief='flat',
+        bg = '#ffffff',
+        highlightbackground='white',
+        highlightthickness=2,
+        command = abrir_csp_2)
+    boton_metodo_2.place(x=200, y=300)
+
+    ventana_metodos_csp.mainloop()
 
 def archivo_logico_1():
     ventana_metodos_logicos.destroy()
@@ -155,7 +202,7 @@ def inicio():
             bg = '#ffffff',
             highlightbackground='white',
             highlightthickness=2,
-            #command = metodo_csp
+            command = metodos_csp
             )
     boton_csp.place(x=150, y=280)
 
@@ -166,14 +213,14 @@ def inicio():
             bg = '#ffffff',
             highlightbackground='white',
             highlightthickness=2,
-            #command = metodos_backtracking
+            command = metodos_backtracking
             )
     boton_backtracking.place(x=150, y=310)
     ventana_inicio.mainloop()
 
 
 ventana = tkinter.Tk()
-fondo = tkinter.PhotoImage(file='Menu.png')
+fondo = tkinter.PhotoImage(file='Inicio.png')
 label1 = tkinter.Label(ventana, image=fondo)
 label1.place(x=0,y=0)
 ventana.geometry('500x500+700+250')
@@ -186,7 +233,8 @@ boton_continuar = tkinter.Button(text='Empezar',
         highlightbackground='white',
         highlightthickness=2,
         command = inicio)
-boton_continuar.place(x=200, y=250)
+
+boton_continuar.place(x=390, y=450)
 ventana.mainloop()
 
 

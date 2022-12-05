@@ -88,7 +88,7 @@ def backend(r: int, c: int,
         #plt.imshow(x)
         #plt.show
     
-    return solutions_array
+    #return solutions_array
 
 
 if __name__ == '__main__':

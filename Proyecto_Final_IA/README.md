@@ -1,25 +1,19 @@
 Nonogram Solver
 ===============
 
-This program solves nonogram puzzles.  Nonograms are a type of logic puzzle wherein a list of
-numbers are given for each row and column signifying which cells of a grid to fill in and which to
-leave blank.
+El programa aqui contenido reune varias tecnicas con el objetivo de solucionar nonogramas y estudiar el comportamiento de las diferentes tecnicas.
+para ejecutar lo primero que se realizara es hacer un git pull (dirección SSH del repositorio), luego se ejecutará el archivo menu.py.
 
-For more information, please see this [Wikipedia article](https://en.wikipedia.org/wiki/Nonogram).
+Para una mejor guía se sugiere ver el siguiente video: 
 
-Installation
+
+
+instalación
 ------------
-1. Ensure that you have Python installed.  This was developed under version 3.8.10, but many other
-versions of 3 should also work.  Additionally, there should not need to be many changes to get it
-to work under Python 2.x if, for some reason, that is all you have available to you.
+1. asegurese de que tiene python instalado, se recomienda una versión mayor o igual a python 3.8
 
-2. Clone the repository onto your computer.
+2. Clone el repositorio.
 
-3. Optional, but recommended:  Setup a virtual environment for the project.
-
-4. Install the dependencies with the command `pip install -r requirements.txt` or
+4. Instale los paquetes contenidos en requirements `pip install -r requirements.txt` or
 `pip install -r requirements.windows.txt` on Windows.
 
-Usage
------
-For instructions, please watch the YouTube video below.

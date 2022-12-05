@@ -124,6 +124,7 @@ class NonogramSolver:
     def check_solved(self):
         if 0 not in self.rows_done and 0 not in self.cols_done:
             self.solved = True
+            print(self.board)
             plt.imshow(self.board, cmap='Greys')
             plt.axis('off')
             t = plt.show()

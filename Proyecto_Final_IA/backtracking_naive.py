@@ -2,7 +2,9 @@ import re
 from csv_lista import rows, cols   
 from random import sample
 from typing import List, Tuple, Dict
-
+import matplotlib.pyplot as plt 
+import numpy as np 
+from typing import List, Dict, Tuple, Set, AnyStr, Type
 solution_list: List[List[int]] = []
 
 
@@ -90,13 +92,16 @@ def extend(row_args: List[Tuple], col_args: List[Tuple], partial_solution: List[
     return
 
 if __name__ == '__main__':
-
     row_args = rows
     col_args = cols
     extend(row_args, col_args, [])
     # Display
+    n = len(rows)
+    
     for i, solution in enumerate(solution_list):
-        print(f'Solution: {i + 1}/{len(solution_list)}')
-        for r in range(0, len(row_args)*len(col_args), len(col_args)):
-            print(solution[r:(r + len(col_args))])
-        print('\n')
+        output=[solution[i:i + 5] for i in range(0, len(solution), 5)]
+        plt.imshow(output, cmap='Greys')
+        plt.axis('off')
+        plt.show()
+            
+

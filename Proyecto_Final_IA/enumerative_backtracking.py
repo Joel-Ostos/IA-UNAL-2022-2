@@ -1,9 +1,10 @@
 import numpy as np
 import itertools as it
+import time
 import re
 from csv_lista import rows, cols 
 from typing import List, Dict, Tuple, Set, AnyStr, Type
-
+import matplotlib.pyplot as plt 
 solution_list: List[Type[np.ndarray]] = []
 placements: Dict[str, Dict[int, List[Type[np.ndarray]]]] = {}
 
@@ -276,6 +277,7 @@ def backtrack(solution_array: Type[np.ndarray], row_placements: Dict[int, List[T
 
 
 if __name__ == "__main__":
+    
     row_args = rows
     print(len(rows))
     col_args = cols
@@ -311,6 +313,9 @@ if __name__ == "__main__":
         # Backtrack through the rest of the unsolved rows
         print('Solving via backtracking')
         backtrack(partial_solution, placements['row'], row_args, col_args, completed_rows, completed_columns)
-    
+
     for solution in solution_list:
         print(solution)
+        plt.imshow(solution, cmap='Greys')
+        plt.axis('off')
+        plt.show()

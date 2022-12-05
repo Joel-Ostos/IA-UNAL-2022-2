@@ -2,6 +2,7 @@ import re
 import constraint as cp
 import numpy as np
 import json
+import matplotlib.pyplot as plt
 from csv_lista_de_listas import rows, cols
 from typing import List, Tuple
 from functools import partial
@@ -79,8 +80,13 @@ def backend(r: int, c: int,
     solutions = problem.getSolutions()
     solutions_array = []
     for solution in solutions:
+
         variables_in_order = [solution[k] for k in sorted(solution)]
         solutions_array.append(np.array(variables_in_order).reshape((r, c)))
+        x =np.array(solutions_array)
+        print(x)
+        #plt.imshow(x)
+        #plt.show
     
     return solutions_array
 

@@ -18,7 +18,40 @@ def metodos_logico():
     ventana_inicio.destroy()
     global ventana_metodos_logicos
     ventana_metodos_logicos = tkinter.Tk()
-    ventana_metodos_logicos.geometry('500x500+400+80')
+    ventana_metodos_logicos.geometry('500x500+700+250')
+    ventana_metodos_logicos.title('Metodos Logicos')
+    fondo_metodos_logico = tkinter.PhotoImage(file='Menu.png')
+    fondo_ub_metodos_logico = tkinter.Label(ventana_metodos_logicos,image=fondo_metodos_logico)
+    fondo_ub_metodos_logico.place(x=0,y=0)
+
+    boton_metodo_1 = tkinter.Button(ventana_metodos_logicos, text='Metodo 1',
+        font='Bodoni',
+        cursor='hand2',
+        relief='flat',
+        bg = '#ffffff',
+        highlightbackground='white',
+        highlightthickness=2,
+        command = abrir_logico_1)
+    boton_metodo_1.place(x=200, y=270)
+
+    boton_metodo_2 = tkinter.Button(ventana_metodos_logicos,text='Metodo 2',        
+        font='Bodoni',
+        cursor='hand2',
+        relief='flat',
+        bg = '#ffffff',
+        highlightbackground='white',
+        highlightthickness=2,
+        command = abrir_logico_2)
+    boton_metodo_2.place(x=200, y=300)
+
+    ventana_metodos_logicos.mainloop()
+
+
+def metodos_backtracking():
+    ventana_inicio.destroy()
+    global ventana_metodos_logicos
+    ventana_metodos_logicos = tkinter.Tk()
+    ventana_metodos_logicos.geometry('500x500+700+250')
     ventana_metodos_logicos.title('Metodos Logicos')
     fondo_metodos_logico = tkinter.PhotoImage(file='Menu.png')
     fondo_ub_metodos_logico = tkinter.Label(ventana_metodos_logicos,image=fondo_metodos_logico)
@@ -50,7 +83,7 @@ def archivo_logico_1():
     ventana_metodos_logicos.destroy()
     global ventana_archivo_logico_1
     ventana_archivo_logico_1 = tkinter.Tk()
-    ventana_archivo_logico_1.geometry('500x500+400+80')
+    ventana_archivo_logico_1.geometry('500x500+700+250')
     ventana_archivo_logico_1.title('Metodos Logicos')
     fondo_archivo_logico_1 = tkinter.PhotoImage(file='Menu.png')
     fondo_ub_archivo_logico_1 = tkinter.Label(ventana_archivo_logico_1,image=fondo_archivo_logico_1)
@@ -98,7 +131,7 @@ def inicio():
     ventana.destroy()
     global ventana_inicio
     ventana_inicio = tkinter.Tk()
-    ventana_inicio.geometry('500x500+400+80')
+    ventana_inicio.geometry('500x500+700+250')
     ventana_inicio.title('Metodos Logicos')
     fondo_inicio = tkinter.PhotoImage(file='Menu.png')
     fondo_ub_inicio = tkinter.Label(ventana_inicio,image=fondo_inicio)
@@ -143,7 +176,7 @@ ventana = tkinter.Tk()
 fondo = tkinter.PhotoImage(file='Menu.png')
 label1 = tkinter.Label(ventana, image=fondo)
 label1.place(x=0,y=0)
-ventana.geometry('500x500+400+80')
+ventana.geometry('500x500+700+250')
 ventana.title('Nonogram Solver Menu')
 boton_continuar = tkinter.Button(text='Empezar',        
         font='Bodoni',

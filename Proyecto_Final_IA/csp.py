@@ -83,7 +83,7 @@ def backend(r: int, c: int,
 
         variables_in_order = [solution[k] for k in sorted(solution)]
         solutions_array.append(np.array(variables_in_order).reshape((r, c)))
-        x =np.array(solutions_array)
+        x = list(solutions_array)
         print(x)
         #plt.imshow(x)
         #plt.show
